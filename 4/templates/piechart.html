@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/styles.css') }}"
+    />
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script type="text/javascript">
+      google.charts.load("current", { packages: ["corechart"] });
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn("string", "Earthquake range");
+        data.addColumn("number", "Number of Quakes");
+        var options = {
+          title: "NUMBER OF EARTHQUAKES BASED ON RANGE",
+          width: 700,
+          height: 600,
+        };
+
+        ("{% for x in rows%}");
+        data.addRows([["{{x[0]}}", parseFloat("{{x[1]}}")]]);
+        ("{% endfor %}");
+
+        var chart = new google.visualization.PieChart(
+          document.getElementById("chart")
+        );
+        chart.draw(data, options);
+      }
+    </script>
+    <style>
+      * {
+        background-color: darkgrey;
+      }   
+    </style>     
+  </head>
+  <body>
+    <center>
+      <div style="padding-top: 50px">
+        <div style="padding-bottom: 30px">
+          <a href="{{ url_for('home') }}" class="btn">HOME</a>
+        </div>
+      </div>
+      <div id="chart"></div>
+    </center>
+  </body>
+</html>

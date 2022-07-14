@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/styles.css') }}"
+    />
+    <style>
+      * {
+        background-color: darkgrey;
+      }       
+    </style>     
+  </head>
+  <body>
+    <center>
+      <div style="padding-top: 50px">
+        <div style="padding-bottom: 30px">
+          <a href="{{ url_for('home') }}" class="btn">HOME</a>
+        </div>
+      </div>
+      {% if time %}
+      <div id="time">
+        <p>TIME TAKEN TO CREATE TABLE: {{ time }}</p>
+      </div>
+      {% endif %}
+    </center>
+  </body>
+</html>

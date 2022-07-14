@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>update details</title>
+    <style>
+      * {
+        background-color: darkgrey;
+      }            
+      a {
+        text-decoration: none;
+        background-color: rgb(44, 134, 212);
+        padding: 5px;
+        border-radius: 5px;
+        color: white;
+      }
+      input[type="text"],
+      input[type="number"] {
+        padding: 5px;
+        outline: none;
+        width: 250px;
+      }
+      input[type="submit"] {
+        padding: 10px;
+        outline: none;
+        background-color: rgb(202, 223, 12);
+        border-radius: 5px;
+        border: none;
+        color: black;
+        cursor: pointer;
+        width: 250px;
+      }
+    </style>
+  </head>
+  <body style="padding-top: 50px; text-align: center">
+    <div style="margin-left: auto; margin-right: auto">
+      <div>
+        <a href="/" class="btn">HOME</a>
+      </div>
+      <div style="padding-top: 50px">
+        <form
+          action="/updateFormDetails"
+          method="POST"
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+          "
+        >
+          {% for col in rows %}
+          <input
+            type="text"
+            name="name"
+            value="{{col[0]}}"
+            autocomplete="off"
+            readonly
+            placeholder="NAME"
+            title="NAME CAN'T BE CHANGED"
+            style="cursor: not-allowed"
+          />
+          <input
+            type="text"
+            name="state"
+            value="{{col[1]}}"
+            autocomplete="off"
+            placeholder="STATE"
+          />
+          <input
+            type="number"
+            name="salary"
+            value="{{col[2]}}"
+            autocomplete="off"
+            placeholder="SALARY"
+          />
+          <input
+            type="number"
+            name="grade"
+            value="{{col[3]}}"
+            autocomplete="off"
+            placeholder="GRADE"
+          />
+          <input
+            type="number"
+            name="room"
+            value="{{col[4]}}"
+            autocomplete="off"
+            placeholder="ROOM"
+          />
+          <input
+            type="number"
+            name="telnum"
+            value="{{col[5]}}"
+            autocomplete="off"
+            placeholder="TELNUM"
+            maxlength="10"
+          />
+          <input
+            type="text"
+            name="keywords"
+            value="{{col[7]}}"
+            autocomplete="off"
+            placeholder="KEYWORDS"
+          />
+          <input type="submit" value="Update" />
+          {% endfor %} {% if not rows %}
+          <p>NO RECORDS fOUND WITH THAT NAME</p>
+          {% endif %}
+          <a href="/addpicture" style="background-color: rgb(100, 146, 117)"
+            >WOULD YOU LIKE TO UPDATE THE PICTURE INSTEAD?</a
+          >
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

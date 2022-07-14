@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>search salary range</title>
+    <style>
+      * {
+        background-color: darkgrey;
+      }            
+      a {
+        text-decoration: none;
+        background-color: rgb(44, 134, 212);
+        padding: 5px;
+        border-radius: 5px;
+        color: white;
+      }
+      input[type="text"],
+      input[type="number"] {
+        padding: 5px;
+        outline: none;
+        width: 250px;
+      }
+      input[type="submit"] {
+        padding: 10px;
+        outline: none;
+        background-color: rgb(202, 223, 12);
+        border-radius: 5px;
+        border: none;
+        color: black;
+        cursor: pointer;
+        width: 250px;
+      }
+    </style>
+  </head>
+  <body style="padding-top: 50px; text-align: center">
+    <div style="margin-left: auto; margin-right: auto">
+      <div>
+        <a href="/" class="btn">HOME</a>
+      </div>
+      <div style="padding-top: 50px">
+        <p>LEAVE MINIMUM SALARY BLANK, IF YOU WOULD LIKE TO CONSIDER IT AS 0</p>
+        <form
+          action="/getSalaryRange"
+          method="POST"
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+          "
+        >
+          <input
+            type="number"
+            name="minsal"
+            placeholder="MINIMUM SALARY"
+            autocomplete="off"
+          />
+          <input
+            type="number"
+            name="maxsal"
+            placeholder="MAXIMUM SALARY"
+            autocomplete="off"
+            required
+          />
+          <input type="submit" value="Get people based on range" />
+        </form>
+        <p style="margin-top: 20px; font-weight: bold">or</p>
+        <form action="/retrivenullsal" method="post" style="margin-top: 30px">
+          <input
+            type="submit"
+            value="Get people with salary as null or blank"
+          />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

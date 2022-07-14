@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>allpeople</title>
+    <style>
+      * {
+        background-color: darkgrey;
+      }            
+      a {
+        text-decoration: none;
+        background-color: rgb(44, 134, 212);
+        padding: 5px;
+        border-radius: 5px;
+        color: white;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      td {
+        padding: 0 20px;
+      }
+    </style>
+  </head>
+  <body style="padding-top: 50px; text-align: center; padding-bottom: 20px">
+    <div style="margin-left: auto; margin-right: auto">
+      <div>
+        <a href="/" class="btn">HOME</a>
+      </div>
+      <div style="margin-top: 50px; text-align: center">
+        <table>
+          <thead style="font-weight: bold">
+            <tr>
+              <td>Name</td>
+              <td>State</td>
+              <td>Salary</td>
+              <td>Grade</td>
+              <td>Room</td>
+              <td>Tel Number</td>
+              <td>Image Name</td>
+              <td>Image</td>
+              <td>Keywords</td>
+            </tr>
+          </thead>
+          {% for col in rows %}
+          <tbody>
+            <tr>
+              <td>{{col[0]}}</td>
+              <td>{{col[1]}}</td>
+              <td>{{col[2]}}</td>
+              <td>{{col[3]}}</td>
+              <td>{{col[4]}}</td>
+              <td>{{col[5]}}</td>
+              <td>{{col[6]}}</td>
+              <td>
+                <img
+                  style="max-height: 150px; max-width: 150px"
+                  src="static/{{col[6]}}"
+                  alt="No Image Found"
+                />
+              </td>
+              <td>{{col[7]}}</td>
+            </tr>
+          </tbody>
+          {% endfor %} {% if not rows %}
+          <p>NO RECORDS FOUND</p>
+          {% endif %}
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

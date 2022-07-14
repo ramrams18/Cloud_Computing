@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Earthquakes</title>
+    <style>
+      * {
+        background-color: darkgrey;
+      }                
+      a {
+        text-decoration: none;
+        background-color: rgb(44, 134, 212);
+        padding: 5px;
+        border-radius: 5px;
+        color: white;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      td {
+        padding: 0 20px;
+      }
+      table {
+        width: fit-content;
+        display: block;
+        max-height: 300px;
+        overflow: auto;
+      }
+      thead > tr > td {
+        position: sticky;
+        top: 0;
+      }
+    </style>
+  </head>
+  <body style="padding-top: 50px; text-align: center; padding-bottom: 20px">
+    <div style="margin-left: auto; margin-right: auto">
+      <div>
+        <a href="/" class="btn">HOME</a>
+      </div>
+      <div style="margin-top: 20px">
+        {% if rows1|length > rows2|length %}
+        <p>
+          EARTHQUAKES ARE MORE COMMON IN 1ST PLACE BASED ON THE GIVEN RADIUS
+        </p>
+        {% else %}
+        <p>
+          EARTHQUAKES ARE MORE COMMON IN 2ND PLACE BASED ON THE GIVEN RADIUS
+        </p>
+        {% endif %}
+      </div>
+      <div>
+        <div style="margin-top: 20px">
+          COUNT OF EQ's IN 1ST PLACE: <b> {{rows1|length}} </b>
+        </div>
+        <div style="margin-top: 50px; text-align: center">
+          <table>
+            <thead style="font-weight: bold">
+              <tr>
+                <td>time</td>
+                <td>latitude</td>
+                <td>longitude</td>
+                <td>mag</td>
+                <td>magType</td>
+                <td>place</td>
+                <td>distance (in km)</td>
+              </tr>
+            </thead>
+            {% for col in rows1 %}
+            <tbody>
+              <tr>
+                <td>{{col[0]}}</td>
+                <td>{{col[1]}}</td>
+                <td>{{col[2]}}</td>
+                <td>{{col[4]}}</td>
+                <td>{{col[5]}}</td>
+                <td>{{col[6]}}</td>
+                <td>{{col[7]}}</td>
+              </tr>
+            </tbody>
+            {% endfor %}
+          </table>
+        </div>
+      </div>
+
+      <div>
+        <div style="margin-top: 20px">
+          COUNT OF EQ's IN 2ND PLACE: <b> {{rows2|length}} </b>
+        </div>
+        <div style="margin-top: 50px; text-align: center">
+          <table>
+            <thead style="font-weight: bold">
+              <tr>
+                <td>time</td>
+                <td>latitude</td>
+                <td>longitude</td>
+                <td>mag</td>
+                <td>magType</td>
+                <td>place</td>
+                <td>distance (in km)</td>
+              </tr>
+            </thead>
+            {% for col in rows2 %}
+            <tbody>
+              <tr>
+                <td>{{col[0]}}</td>
+                <td>{{col[1]}}</td>
+                <td>{{col[2]}}</td>
+                <td>{{col[4]}}</td>
+                <td>{{col[5]}}</td>
+                <td>{{col[6]}}</td>
+                <td>{{col[7]}}</td>
+              </tr>
+            </tbody>
+            {% endfor %}
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<center><h1>NAME</h1></center>
+<center><h2>ID</h2></center><br><br>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <meta http-equiv="refresh" content="10">
+</head>
+
+  <style>
+body {
+  background-color: grey;
+}
+</style>
+<body>
+<a href="/" target="_blank">HOME</a><br/><br/>
+<br>
+<a href="/closeApp" target="_blank">CLOSE</a><br/><br/>
+
+
+ <div class="container-fluid"style="border: none " >
+         <h4 class="h4" style="text-align: left;">QUESTION: <i >{{ T_Ques }}</i></h4>
+        <br>
+    </div>
+
+<form action="/Student" method="POST">
+
+    ANSWER THE QUESTION: <input type="text" placeholder="" name="ans" value="{{ ans }}"> <br/><br/>
+
+    <div class="col-auto">
+        <button class="btn btn-outline-primary" type="submit" name="submit" value="task1">SEND</button>
+                                 </div>
+      </form>
+<br/><br/>
+<div class="container-fluid"style="border: none " >
+  <h4 class="h4" style="text-align: left;">GRADES: <i >{{curr_grade}} </i></h4>
+        <br>
+         <h4 class="h4" style="text-align: left;">TOTAL GRADES: <i >{{total_grade}}</i></h4>
+        <br>
+  <h4 class="h4" style="text-align: left;">AVERAGE: <i >{{avg}}</i></h4>
+
+</div>
+<script type="text/javascript">
+          $(document).ready(function() {
+    // timer function
+    function startTimer(duration, display) {
+        var timer = duration, minutes, seconds;
+        var refresh = setInterval(function () {
+            minutes = parseInt(timer / 60, 10)
+            seconds = parseInt(timer % 60, 10);
+
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            var output = minutes + " : " + seconds;
+            display.text(output);
+            $("title").html(output + " - TimerTimer");
+
+
+
+            if (--timer < 0) {
+                //display.text("Time's Up!");
+                clearInterval(refresh);  // exit refresh loop
+            }
+
+
+        }, 1000);
+
+    }
+
+    // start timer
+    jQuery(function ($) {
+        var display = $('#time');
+        startTimer(Seconds, display);
+    });
+})
+
+
+// ====================================== DIV Contents Update Section ========================================//
+
+    // Refresh part of page not all
+
+
+$(document).ready(function(){
+setInterval(function(){
+      $("#tablediv").load(window.location.href + "#tablediv" );
+}, 10000);
+});
+
+
+
+
+
+
+$(document).ready(function(){
+setInterval(function(){
+      $("#names").load(window.location.href + "#names" );
+}, 10000);
+});
+
+
+$(document).ready(function(){
+setInterval(function(){
+      $("#namess").load(window.location.href + "#namess" );
+}, 10000);
+});
+
+
+
+$(document).ready(function(){
+setInterval(function(){
+      $("#studentanswer").load(window.location.href + "#studentanswer" );
+}, 10000);
+});
+
+
+$(document).ready(function(){
+setInterval(function(){
+      $("#namediv").load(window.location.href + "#namediv" );
+}, 10000);
+});
+
+
+$(document).ready(function(){
+setInterval(function(){
+      $("#teachnamediv").load(window.location.href + "#teachnamediv" );
+}, 10000);
+});
+
+
+
+$(document).ready(function(){
+setInterval(function(){
+      $("#adminhints").load(window.location.href + "#adminhints" );
+}, 10000);
+});
+
+
+
+
+
+$(document).ready(function(){
+setInterval(function(){
+      $("#teacherQuestion").load(window.location.href + "#teacherQuestion" );
+}, 10000);
+});
+
+
+
+
+$(document).ready(function(){
+setInterval(function(){
+      $("#grades").load(window.location.href + "#grades" );
+}, 10000);
+});
+
+
+
+$(document).ready(function(){
+setInterval(function(){
+      $("#totalgrades").load(window.location.href + "#totalgrades" );
+}, 10000);
+});
+
+
+
+$(document).ready(function(){
+setInterval(function(){
+      $("#averagegrades").load(window.location.href + "#averagegrades" );
+}, 10000);
+});
+
+
+$(document).ready(function(){
+setInterval(function(){
+      $("#teQuestion").load(window.location.href + "#teQuestion" );
+}, 10000);
+});
+
+
+$(document).ready(function(){
+setInterval(function(){
+      $("#studanswer").load(window.location.href + "#studanswer" );
+}, 10000);
+});
+
+
+      </script>
+</body>
+</html>

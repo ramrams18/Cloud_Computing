@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2</title>
+    <style>
+      * {
+        background-color: darkgrey;
+      }       
+      a {
+        text-decoration: none;
+        background-color: rgb(44, 134, 212);
+        padding: 5px;
+        border-radius: 5px;
+        color: white;
+      }
+      input[type="text"],
+      input[type="number"] {
+        padding: 5px;
+        outline: none;
+      }
+      input[type="submit"] {
+        padding: 10px;
+        outline: none;
+        background-color: rgb(202, 223, 12);
+        border-radius: 5px;
+        border: none;
+        color: black;
+        cursor: pointer;
+      }
+      form > div {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body style="margin: auto; padding-top: 50px">
+    <div>
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-direction: column;
+          gap: 30px;
+        "
+      >
+        <div>
+          <a href="/" class="btn">HOME</a>
+        </div>
+        <div>
+          <form action="compareform" method="post">
+            <div style="display: flex; gap: 30px">
+              <div style="display: flex; flex-direction: column; gap: 20px">
+                <div>
+                  <input
+                    type="number"
+                    placeholder="ENTER LATITUDE 1"
+                    name="latitude1"
+                    step="any"
+                    required
+                  />
+                </div>
+                <div>
+                  <input
+                    type="number"
+                    placeholder="ENTER LONGITUDE 1"
+                    name="longitude1"
+                    step="any"
+                    required
+                  />
+                </div>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 20px">
+                <div>
+                  <input
+                    type="number"
+                    placeholder="ENTER LATITUDE 2"
+                    name="latitude2"
+                    step="any"
+                    required
+                  />
+                </div>
+                <div>
+                  <input
+                    type="number"
+                    placeholder="ENTER LONGITUDE 2"
+                    name="longitude2"
+                    step="any"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              style="display: flex; justify-content: center; margin-top: 20px"
+            >
+              <input
+                type="number"
+                placeholder="ENTER RADIUS IN KM"
+                name="radius"
+                step="any"
+                required
+              />
+            </div>
+            <div
+              style="display: flex; justify-content: center; margin-top: 20px"
+            >
+              <input
+                type="submit"
+                value="COMPARE EARTHQUAKES WITHIN RADIUS"
+                class="btn"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/styles.css') }}"
+    />
+    <style>
+      * {
+        background-color: darkgrey;
+      }         
+      .test > div {
+        height: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <center>
+        <div><h1>NAME</h1></div>
+        <div><h2>ID</h2></div>
+      </center>      
+      <div style="padding-top: 50px" class="test">
+        <div>
+          <a class="btn" href="create">TIME TO CREATE TABLE</a>
+        </div>
+        <div>
+          <a class="btn" href="all-records"
+            >TIME TO RETRIVE ALL RECORDS (NORMAL)</a
+          >
+        </div>
+        <div>
+          <a class="btn" href="randomnum">
+            TIME TO RETRIVE RANDOM QUERIES (UPTO 1000)
+          </a>
+        </div>
+        <div>
+          <a class="btn" href="restrictedset">
+            TIME TO RETRIVE RESTRICTED SET OF QUERIES (UPTO 1000)
+          </a>
+        </div>
+        <div>
+          <a class="btn" href="randomnumredis">
+            TIME TO RETRIVE RANDOM QUERIES (UPTO 1000) CACHED
+          </a>
+        </div>
+        <div>
+          <a class="btn" href="restrictedsetredis">
+            TIME TO RETRIVE RESTRICTED SET OF QUERIES (UPTO 1000) CACHED
+          </a>
+        </div>
+      </div>
+    </center>
+  </body>
+</html>

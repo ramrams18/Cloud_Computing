@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/styles.css') }}"
+    />
+    <script>
+        function hide(){
+            document.getElementById("time").style.display = "none";
+        }
+    </script>
+    <style>
+      * {
+        background-color: darkgrey;
+      }       
+    </style>     
+  </head>
+  <body>
+    <center>
+      <div style="padding-top: 50px">
+        <div style="padding-bottom: 30px;">
+            <a href="{{ url_for('home') }}" class="btn">HOME</a>
+        </div>
+       <form action="restrictedsetform" method="post">
+           <div>    
+            <input type="number" name="randnum" placeholder="ENTER NUMBER OF QUERIES" min="1" max="1000" step="1" required />
+           </div>
+           <div>
+               <input type="number" name="minmag" placeholder="MIN MAGNITUDE" min="0" max="8" step="0.01" required/>
+           </div>
+           <div>
+                <input type="number" name="maxmag" placeholder="MAX MAGNITUDE" min="0" max="8" step="0.01" required/>
+           </div>
+       <div>
+        <input type="submit" value="Submit" onclick="hide()" />
+       </div>
+      </div>
+    {% if time %}
+      <div style="padding-top: 30px;" id="time">
+        <p>TIME TAKEN TO RETRIVE RANDOM QUERIES: {{ time }}</p>
+      </div>
+      {% endif %}
+    </center>
+  </body>
+</html>

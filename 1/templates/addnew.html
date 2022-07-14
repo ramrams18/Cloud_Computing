@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Addnew</title>
+    <style>
+      * {
+        background-color: darkgrey;
+      }      
+      a {
+        text-decoration: none;
+        background-color: rgb(44, 134, 212);
+        padding: 5px;
+        border-radius: 5px;
+        color: white;
+      }
+      input[type="text"],
+      input[type="number"] {
+        padding: 5px;
+        outline: none;
+      }
+      input[type="submit"] {
+        padding: 10px;
+        outline: none;
+        background-color: rgb(202, 223, 12);
+        border-radius: 5px;
+        border: none;
+        color: black;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body style="padding-top: 50px; text-align: center">
+    <div style="margin-left: auto; margin-right: auto">
+      <div>
+        <a href="/" class="btn">HOME</a>
+      </div>
+      <div style="padding-top: 50px">
+        <form
+          action="/addnewperson"
+          method="POST"
+          enctype="multipart/form-data"
+          style="
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+          "
+        >
+          <input
+            type="text"
+            name="name"
+            autocomplete="off"
+            placeholder="NAME"
+            required
+          />
+          <input
+            type="text"
+            name="state"
+            autocomplete="off"
+            placeholder="STATE"
+          />
+          <input
+            type="number"
+            name="salary"
+            autocomplete="off"
+            placeholder="SALARY"
+          />
+          <input
+            type="number"
+            name="grade"
+            autocomplete="off"
+            placeholder="GRADE"
+          />
+          <input
+            type="number"
+            name="room"
+            autocomplete="off"
+            placeholder="ROOM"
+          />
+          <input
+            type="number"
+            name="telnum"
+            autocomplete="off"
+            placeholder="TELNUM"
+            maxlength="10"
+          />
+          <input
+            type="file"
+            accept="image/png, image/jpeg, image/jpg"
+            name="pict"
+          />
+          <input
+            type="text"
+            name="keywords"
+            autocomplete="off"
+            placeholder="KEYWORDS"
+          />
+          <input type="submit" value="Add person" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

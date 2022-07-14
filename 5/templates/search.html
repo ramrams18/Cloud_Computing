@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HOME</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/styles.css') }}"
+    />
+    <script>
+      function hide() {
+        document.getElementById("msg").style.display = "none";
+        document.getElementById("no-res").style.display = "none";
+      }
+    </script>
+    <style>
+      * {
+        background-color: darkgrey;
+      }       
+    </style>
+  </head>
+  <body>
+    <center>
+      <div style="padding-top: 50px">
+        <div style="padding-bottom: 30px">
+          <a href="{{ url_for('index') }}" class="btn">HOME</a>
+        </div>
+        <form action="searchform" method="post">
+          <div>
+            <input
+              type="text"
+              name="searchtext"
+              placeholder="SEARCH..."
+              min="1"
+              max="1000"
+              required
+            />
+          </div>
+          <div>
+            <input type="submit" value="SUBMIT" onclick="hide()" />
+          </div>
+        </form>
+      </div>
+      {% if msg %}
+      <div style="padding-top: 30px" id="msg">
+        <p>{{ msg }}</p>
+      </div>
+      {% endif %} {% if lst %} {% for i in lst %}
+      <div>
+        <p>FILE NAME: <b>{{ i[0] }}</b></p>
+        {% if i[1] %} {% for j in i[1] %}
+        <div style="padding: 10px 20px; text-align: left;">{{j}}</div>
+        {% endfor %} {% endif %}
+      </div>
+      {% endfor %} {% endif %}
+      {% if msg and not lst%}
+        <div style="padding-top: 30px" id="no-res">
+            <p>NO RESULTS FOUND</p>
+      {% endif %}
+    </center>
+  </body>
+</html>

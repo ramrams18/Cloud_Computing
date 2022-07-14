@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2</title>
+    <style>
+      * {
+        background-color: darkgrey;
+      }       
+      a {
+        text-decoration: none;
+        background-color: rgb(44, 134, 212);
+        padding: 5px;
+        border-radius: 5px;
+        color: white;
+      }
+      input[type="text"],
+      input[type="number"] {
+        padding: 5px;
+        outline: none;
+      }
+      input[type="submit"] {
+        padding: 10px;
+        outline: none;
+        background-color: rgb(202, 223, 12);
+        border-radius: 5px;
+        border: none;
+        color: black;
+        cursor: pointer;
+      }
+      form > div {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body style="margin: auto; padding-top: 50px">
+    <div>
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-direction: column;
+          gap: 30px;
+        "
+      >
+        <div>
+          <a href="/" class="btn">HOME</a>
+        </div>
+        <div>
+          <form action="netform" method="post">
+            <div>
+              <input type="text" placeholder="NET VALUE" name="net" required />
+            </div>
+            <div>
+              <input
+                type="number"
+                placeholder="GAP"
+                name="gap"
+                step="any"
+                required
+              />
+            </div>
+            <div>
+              <input type="submit" value="SUBMIT" class="btn" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

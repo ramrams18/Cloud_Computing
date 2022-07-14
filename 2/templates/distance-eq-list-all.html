@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Earthquakes</title>
+    <style>
+      * {
+        background-color: darkgrey;
+      }       
+      a {
+        text-decoration: none;
+        background-color: rgb(44, 134, 212);
+        padding: 5px;
+        border-radius: 5px;
+        color: white;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      td {
+        padding: 0 20px;
+      }
+    </style>
+  </head>
+  <body style="padding-top: 50px; text-align: center; padding-bottom: 20px">
+    <div style="margin-left: auto; margin-right: auto">
+      <div>
+        <a href="/" class="btn">HOME</a>
+      </div>
+      <div style="margin-top: 20px">COUNT: <b> {{rows|length}} </b></div>
+      <div style="margin-top: 50px; text-align: center">
+        <table>
+          <thead style="font-weight: bold">
+            <tr>
+              <td>time</td>
+              <td>latitude</td>
+              <td>longitude</td>
+              <td>depth</td>
+              <td>mag</td>
+              <td>magType</td>
+              <td>nst</td>
+              <td>gap</td>
+              <td>dmin</td>
+              <td>rms</td>
+              <td>net</td>
+              <td>id</td>
+              <td>updated</td>
+              <td>place</td>
+              <td>type</td>
+              <td>horizontalError</td>
+              <td>depthError</td>
+              <td>magError</td>
+              <td>magNst</td>
+              <td>status</td>
+              <td>locationSource</td>
+              <td>magSource</td>
+              <td>distance</td>
+            </tr>
+          </thead>
+          {% for col in rows %}
+          <tbody>
+            <tr>
+              <td>{{col[0]}}</td>
+              <td>{{col[1]}}</td>
+              <td>{{col[2]}}</td>
+              <td>{{col[3]}}</td>
+              <td>{{col[4]}}</td>
+              <td>{{col[5]}}</td>
+              <td>{{col[6]}}</td>
+              <td>{{col[7]}}</td>
+              <td>{{col[8]}}</td>
+              <td>{{col[9]}}</td>
+              <td>{{col[10]}}</td>
+              <td>{{col[11]}}</td>
+              <td>{{col[12]}}</td>
+              <td>{{col[13]}}</td>
+              <td>{{col[14]}}</td>
+              <td>{{col[15]}}</td>
+              <td>{{col[16]}}</td>
+              <td>{{col[17]}}</td>
+              <td>{{col[18]}}</td>
+              <td>{{col[19]}}</td>
+              <td>{{col[20]}}</td>
+              <td>{{col[21]}}</td>
+              <td>{{col[22]}}</td>
+            </tr>
+          </tbody>
+          {% endfor %} {% if not rows %}
+          <p>NO RECORDS FOUND</p>
+          {% endif %}
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

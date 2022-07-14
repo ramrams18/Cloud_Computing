@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HOME</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/styles.css') }}"
+    />
+    <script>
+      function hide() {
+        document.getElementById("msg").style.display = "none";
+      }
+    </script>
+    <style>
+      * {
+        background-color: darkgrey;
+      }       
+    </style>
+  </head>
+  <body>
+    <center>
+      <div style="padding-top: 50px">
+        <div style="padding-bottom: 30px">
+          <a href="{{ url_for('index') }}" class="btn">HOME</a>
+        </div>
+        <form action="addnewfileform" method="post">
+          <div>
+            <input
+              type="text"
+              name="filename"
+              placeholder="NAME OF THE FILE TO BE CREATED"
+              min="1"
+              max="30"
+              autocomplete="off"
+              required
+            />
+          </div>
+          <div style="margin: 20px 0">
+            <textarea
+              class="text"
+              name="filecontent"
+              placeholder="CONTENT OF THE FILE"
+              min="1"
+              required
+            ></textarea>
+          </div>
+          <div>
+            <input type="submit" value="SUBMIT" onclick="hide()" />
+          </div>
+        </form>
+
+        {% if msg %}
+        <div style="padding-top: 30px; color: black; font-size: 20px" id="msg">
+          <p>{{ msg }}</p>
+        </div>
+        {% endif %}
+      </div>
+    </center>
+  </body>
+</html>

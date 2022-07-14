@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Records</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/styles.css') }}"
+    />
+    <style>
+      * {
+        background-color: darkgrey;
+      }       
+    </style>      
+  </head>
+  <body>
+    <center>
+      <div style="padding-top: 50px">
+        <a href="{{ url_for('home') }}" class="btn">HOME</a>
+        <div style="margin-top: 20px">COUNT: <b> {{rows|length}} </b></div>
+        <div style="margin-top: 20px">TIME TO EXECUTE: <b> {{time}} </b></div>
+        <div style="margin-top: 50px; text-align: center">
+          <table style="margin-left: 20px">
+            <tr>
+              <th>time</th>
+              <th>latitude</th>
+              <th>longitude</th>
+              <th>depth</th>
+              <th>mag</th>
+              <th>magType</th>
+              <th>nst</th>
+              <th>gap</th>
+              <th>dmin</th>
+              <th>rms</th>
+              <th>net</th>
+              <th>id</th>
+              <th>updated</th>
+              <th>place</th>
+              <th>type</th>
+              <th>horizontalError</th>
+              <th>depthError</th>
+              <th>magError</th>
+              <th>magNst</th>
+              <th>status</th>
+              <th>locationSource</th>
+              <th>magSource</th>
+            </tr>
+            {% for col in rows %}
+            <tr>
+              <td>{{col[0]}}</td>
+              <td>{{col[1]}}</td>
+              <td>{{col[2]}}</td>
+              <td>{{col[3]}}</td>
+              <td>{{col[4]}}</td>
+              <td>{{col[5]}}</td>
+              <td>{{col[6]}}</td>
+              <td>{{col[7]}}</td>
+              <td>{{col[8]}}</td>
+              <td>{{col[9]}}</td>
+              <td>{{col[10]}}</td>
+              <td>{{col[11]}}</td>
+              <td>{{col[12]}}</td>
+              <td>{{col[13]}}</td>
+              <td>{{col[14]}}</td>
+              <td>{{col[15]}}</td>
+              <td>{{col[16]}}</td>
+              <td>{{col[17]}}</td>
+              <td>{{col[18]}}</td>
+              <td>{{col[19]}}</td>
+              <td>{{col[20]}}</td>
+              <td>{{col[21]}}</td>
+            </tr>
+            {% endfor %} {% if not rows %}
+            <p>NO RECORDS FOUND</p>
+            {% endif %}
+          </table>
+        </div>
+      </div>
+    </center>
+  </body>
+</html>

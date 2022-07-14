@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HOME</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/styles.css') }}"
+    />
+    <style>
+      * {
+        background-color: darkgrey;
+      }          
+      .test > div {
+        height: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <div style="padding-top: 50px" class="test">
+        <h1>NAME</h1>
+        <h2>ID</h2>
+
+        <div style="padding-top: 10px">
+          <a class="btn" href="piechart">PIE CHART</a>
+        </div>
+        <div>
+          <a class="btn" href="magvsdept">MAG VS DEPTH FOR 100 RECENT QUAKES</a>
+        </div>
+      </div>
+    </center>
+  </body>
+</html>
