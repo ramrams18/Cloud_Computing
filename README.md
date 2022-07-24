@@ -9,6 +9,6 @@
 
 >> I have created and hosted web apps using Flask. Ran DB queries, Implemented load balancer to distribute inbound flow.
 
-#### - IBM dB2.
+#### - IBM Cloud.
 #### - Microsoft Azure.
 #### - Amazon AWS.
